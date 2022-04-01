@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
 
-
     //Returns a Vector2 of horizontal and vertical input
     Vector2 GetMovementInputs()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameStateManagerScript : MonoBehaviour
 {
-    public enum gameStatesEnum
+    [HideInInspector] public enum gameStatesEnum
     {
         Gameplay, 
         Gameover,
