@@ -37,7 +37,7 @@ public class healthManagerScript : MonoBehaviour
     private void Update()
     {
         //For testing
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             TakeDamage(2);
         }
