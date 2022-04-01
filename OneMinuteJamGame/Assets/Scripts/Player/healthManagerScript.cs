@@ -33,4 +33,13 @@ public class healthManagerScript : MonoBehaviour
     {
         OnDeath?.Invoke();
     }
+
+    private void Update()
+    {
+        //For testing
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            TakeDamage(2);
+        }
+    }
 }
