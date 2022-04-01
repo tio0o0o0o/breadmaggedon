@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeed, rotationSpeed;
+
+    private Vector2 moveDirection;
 
     //Returns a Vector2 of horizontal and vertical input
-    Vector2 GetMovementInputs()
+    void GetMoveDirection()
     {
         float verticalInput = Input.GetAxisRaw("Vertical");
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        Vector2 moveDirection = new Vector2(horizontalInput, verticalInput).normalized;
-
-        return moveDirection;
+        moveDirection = new Vector2(horizontalInput, verticalInput);
+        moveDirection.Normalize(); 
     }
 
     void Move()
     {
-        rb.velocity = GetMovementInputs() * Time.deltaTime * moveSpeed;
+        GetMoveDirection();
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
     }
 
-    private void Update()
+    void Rotate()
+    {
+        if (moveDirection != Vector2.zero)
+        {
+            Quaternion rotateTo = Quaternion.LookRotation(Vector3.forward, moveDirection);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotateTo, rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    private void FixedUpdate()
     {
         switch (GameStateManagerScript.gameState)
         {
             case GameStateManagerScript.gameStatesEnum.Gameplay:
                 Move();
+                Rotate();
                 break;
 
             case GameStateManagerScript.gameStatesEnum.Gameover:
@@ -38,4 +49,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+
+
 
