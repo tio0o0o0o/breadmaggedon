@@ -10,5 +10,6 @@ public class GameStateManagerScript : MonoBehaviour
         Gameover,
     }
 
+    //Current game state
     public static gameStatesEnum gameState = gameStatesEnum.Gameplay;
 }
