@@ -25,6 +25,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        switch (GameStateManagerScript.gameState)
+        {
+            case GameStateManagerScript.gameStatesEnum.Gameplay:
+                Move();
+                break;
+
+            case GameStateManagerScript.gameStatesEnum.Gameover:
+                break;
+
+            default:
+                break;
+        }
     }
 }
+

@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class GameStateManagerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum gameStatesEnum
     {
-        
+        Gameplay, 
+        Gameover,
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static gameStatesEnum gameState = gameStatesEnum.Gameplay;
 }
