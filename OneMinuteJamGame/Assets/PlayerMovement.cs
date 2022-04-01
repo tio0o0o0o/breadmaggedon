@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float verticalInput = Input.GetAxisRaw("Vertical");
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        Vector2 moveDirection = new Vector2(horizontalInput, verticalInput);
+        Vector2 moveDirection = new Vector2(horizontalInput, verticalInput).normalized;
 
         return moveDirection;
     }
