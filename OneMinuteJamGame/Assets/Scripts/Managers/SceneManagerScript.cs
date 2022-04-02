@@ -10,6 +10,11 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene("GameoverScene");
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     public void OpenGameplayScene()
     {
         SceneManager.LoadScene("GameplayScene");
