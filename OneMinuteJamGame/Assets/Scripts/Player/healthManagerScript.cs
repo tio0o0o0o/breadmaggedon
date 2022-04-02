@@ -15,6 +15,7 @@ public class healthManagerScript : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        OnDeath += DestroyPlayer;
     }
 
     public void TakeDamage(int damageAmount)
@@ -41,5 +42,10 @@ public class healthManagerScript : MonoBehaviour
         {
             TakeDamage(2);
         }
+    }
+
+    void DestroyPlayer()
+    {
+        GameObject.Destroy(gameObject, 2);
     }
 }
