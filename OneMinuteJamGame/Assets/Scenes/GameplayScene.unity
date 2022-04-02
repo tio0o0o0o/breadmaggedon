@@ -782,7 +782,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 1432294068}
   blinkMaterial: {fileID: 2100000, guid: 2943f96441210dc419c0ecf2c6c6a6af, type: 2}
-  defaultMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   blinkTime: 0.07
 --- !u!1 &1941694725
 GameObject:
