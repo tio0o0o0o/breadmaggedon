@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed, rotationSpeed;
 
-    private Vector2 moveDirection;
+    [HideInInspector] public static Vector2 moveDirection;
 
     //Returns a Vector2 of horizontal and vertical input
     void GetMoveDirection()
@@ -34,19 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        switch (GameStateManagerScript.gameState)
-        {
-            case GameStateManagerScript.gameStatesEnum.Gameplay:
-                Move();
-                Rotate();
-                break;
-
-            case GameStateManagerScript.gameStatesEnum.Gameover:
-                break;
-
-            default:
-                break;
-        }
+        Move();
+        Rotate();
     }
 }
 
