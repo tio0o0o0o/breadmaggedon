@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CoinPicker : MonoBehaviour
 {
-    private float coin = 0;
+    private float Coin = 0;
+
+    public TextMeshProUGUI textcoins;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "coin")
+       //Debug.Log ("entered collider");
+        if (other.transform.tag == "Coin")
         {
-            coin++;
+            Coin ++;
+            textcoins.text = Coin.ToString();
+            //Debug.Log("Destroy triggered");
             Destroy(other.gameObject);
         }    
     }
