@@ -17,4 +17,9 @@ public class ParticlesManagerScript : MonoBehaviour
     {
         healthManagerScript.OnDamaged += SpawnDamagedParticles;
     }
+
+    private void OnDestroy()
+    {
+        healthManagerScript.OnDamaged -= SpawnDamagedParticles;
+    }
 }
