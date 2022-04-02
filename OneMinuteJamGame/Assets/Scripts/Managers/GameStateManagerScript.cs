@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameStateManagerScript : MonoBehaviour
 {
     //**Be careful when making changes to this script. Many other scripts will be dependant on it.**
 
-    [HideInInspector] public enum gameStatesEnum
+    public static event Action OnGameover = delegate { };
+
+    void StartGameover()
     {
-        Gameplay, 
-        Gameover,
+        OnGameover?.Invoke();
     }
 
-    //Current game state
-    public static gameStatesEnum gameState = gameStatesEnum.Gameplay;
+    private void Start()
+    {
+        healthManagerScript.OnDeath += StartGameover;
+    }
 }

@@ -13,10 +13,12 @@ public class healthManagerScript : MonoBehaviour
     public static event Action OnDamaged = delegate { };
     public static event Action OnDeath = delegate { };
 
-    private void Start()
+    private void Awake()
     {
         publicMaxHealth = maxHealth;
         currentHealth = maxHealth;
+
+        OnDeath -= DestroyPlayer;
         OnDeath += DestroyPlayer;
     }
 

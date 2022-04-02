@@ -12,8 +12,9 @@ public class SoundPlayer : MonoBehaviour
         audioSource.PlayOneShot(damagedSound);
     }
 
-    private void Start()
+    private void Awake()
     {
+        healthManagerScript.OnDamaged -= PlayDamagedSound;
         healthManagerScript.OnDamaged += PlayDamagedSound;
     }
 }
