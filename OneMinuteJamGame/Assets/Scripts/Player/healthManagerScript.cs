@@ -7,17 +7,20 @@ public class healthManagerScript : MonoBehaviour
 {
     [SerializeField] int maxHealth;
 
-    [HideInInspector] public static int currentHealth;
+    [HideInInspector] public static float publicMaxHealth;
+    [HideInInspector] public static float currentHealth;
 
     public static event Action OnDamaged = delegate { };
     public static event Action OnDeath = delegate { };
 
     private void Start()
     {
+        publicMaxHealth = maxHealth;
         currentHealth = maxHealth;
+        OnDeath += DestroyPlayer;
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
 
@@ -39,7 +42,12 @@ public class healthManagerScript : MonoBehaviour
         //For testing
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            TakeDamage(2);
+            TakeDamage(2f);
         }
+    }
+
+    void DestroyPlayer()
+    {
+        GameObject.Destroy(gameObject, 2);
     }
 }
