@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed, rotationSpeed;
 
-    [HideInInspector] public Vector2 moveDirection;
+    [HideInInspector] public static Vector2 moveDirection;
 
     //Returns a Vector2 of horizontal and vertical input
     void GetMoveDirection()
