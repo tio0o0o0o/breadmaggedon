@@ -9,7 +9,7 @@ public class GameStateManagerScript : MonoBehaviour
 
     public static event Action OnGameover = delegate { };
 
-    void StartGameover()
+    public static void StartGameover()
     {
         OnGameover?.Invoke();
     }

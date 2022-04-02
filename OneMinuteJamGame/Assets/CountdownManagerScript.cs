@@ -6,10 +6,11 @@ using TMPro;
 public class CountdownManagerScript : MonoBehaviour
 {
     [SerializeField] float TimeLeft = 60f;
-    [SerializeField] TextMeshPro countdownText;
+    [SerializeField] TMP_Text countdownText;
 
     private void Start()
     {
+        countdownText.text = TimeLeft.ToString();
         StartCoroutine(Countdown());
     }
 
@@ -21,6 +22,10 @@ public class CountdownManagerScript : MonoBehaviour
         if (TimeLeft > 0)
         {
             StartCoroutine(Countdown());
+        }
+        else
+        {
+            GameStateManagerScript.StartGameover();
         }
     }
 }
