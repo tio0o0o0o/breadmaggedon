@@ -18,8 +18,12 @@ public class healthManagerScript : MonoBehaviour
         publicMaxHealth = maxHealth;
         currentHealth = maxHealth;
 
-        OnDeath -= DestroyPlayer;
         OnDeath += DestroyPlayer;
+    }
+
+    private void OnDestroy()
+    {
+        OnDeath -= DestroyPlayer;
     }
 
     public void TakeDamage(float damageAmount)

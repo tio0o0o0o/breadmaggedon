@@ -15,7 +15,11 @@ public class HealthBarManager : MonoBehaviour
 
     private void Awake()
     {
-        healthManagerScript.OnDamaged -= UpdateHealthUI;
         healthManagerScript.OnDamaged += UpdateHealthUI;
+    }
+
+    private void OnDestroy()
+    {
+        healthManagerScript.OnDamaged -= UpdateHealthUI;
     }
 }

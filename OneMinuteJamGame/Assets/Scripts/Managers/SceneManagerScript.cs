@@ -17,7 +17,11 @@ public class SceneManagerScript : MonoBehaviour
 
     private void Awake()
     {
-        GameStateManagerScript.OnGameover -= OpenGameoverScene;
         GameStateManagerScript.OnGameover += OpenGameoverScene;
+    }
+
+    private void OnDestroy()
+    {
+        GameStateManagerScript.OnGameover -= OpenGameoverScene;
     }
 }

@@ -14,7 +14,11 @@ public class SoundPlayer : MonoBehaviour
 
     private void Awake()
     {
-        healthManagerScript.OnDamaged -= PlayDamagedSound;
         healthManagerScript.OnDamaged += PlayDamagedSound;
+    }
+
+    private void OnDestroy()
+    {
+        healthManagerScript.OnDamaged -= PlayDamagedSound;
     }
 }
