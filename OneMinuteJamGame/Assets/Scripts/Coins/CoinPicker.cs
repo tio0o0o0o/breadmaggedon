@@ -5,7 +5,8 @@ using TMPro;
 
 public class CoinPicker : MonoBehaviour
 {
-    private float Coin = 0;
+    //private float Coin = 0;
+    public int Coin = 0;
 
     public TextMeshProUGUI textcoins;
 
@@ -18,6 +19,7 @@ public class CoinPicker : MonoBehaviour
             textcoins.text = Coin.ToString();
             //Debug.Log("Destroy triggered");
             Destroy(other.gameObject);
+            PlayerPrefs.SetInt("Highscore", Coin);
         }    
     }
 }
