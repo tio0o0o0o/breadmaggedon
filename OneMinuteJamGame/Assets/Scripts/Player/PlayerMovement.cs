@@ -34,19 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        switch (GameStateManagerScript.gameState)
-        {
-            case GameStateManagerScript.gameStatesEnum.Gameplay:
-                Move();
-                Rotate();
-                break;
-
-            case GameStateManagerScript.gameStatesEnum.Gameover:
-                break;
-
-            default:
-                break;
-        }
+        Move();
+        Rotate();
     }
 }
 

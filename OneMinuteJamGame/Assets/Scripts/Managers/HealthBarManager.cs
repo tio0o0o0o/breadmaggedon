@@ -13,8 +13,13 @@ public class HealthBarManager : MonoBehaviour
         healthFill.fillAmount = currectHealthPercentage;
     }
 
-    private void Start()
+    private void Awake()
     {
         healthManagerScript.OnDamaged += UpdateHealthUI;
+    }
+
+    private void OnDestroy()
+    {
+        healthManagerScript.OnDamaged -= UpdateHealthUI;
     }
 }

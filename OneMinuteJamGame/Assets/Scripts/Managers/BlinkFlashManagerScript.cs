@@ -10,10 +10,15 @@ public class BlinkFlashManagerScript : MonoBehaviour
     [SerializeField] Material blinkMaterial, defaultMaterial;
     [SerializeField] float blinkTime;
 
-    private void Start()
+    private void Awake()
     {
         //Subscribes blink to damage delegate
         healthManagerScript.OnDamaged += CallBlinkWhite;
+    }
+
+    private void OnDestroy()
+    {
+        healthManagerScript.OnDamaged -= CallBlinkWhite;
     }
 
     void CallBlinkWhite()
