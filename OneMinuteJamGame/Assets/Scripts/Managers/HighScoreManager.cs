@@ -11,6 +11,6 @@ public class HighScoreManager : MonoBehaviour
 
     private void Start()
     {
-        HStext.text = "Highscore:" + PlayerPrefs.GetInt("Highscore");
+        HStext.text = "High Score:" + PlayerPrefs.GetInt("Highscore");
     }
 }

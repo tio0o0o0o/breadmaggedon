@@ -5,21 +5,36 @@ using TMPro;
 
 public class CoinPicker : MonoBehaviour
 {
-    //private float Coin = 0;
     public int Coin = 0;
-
     public TextMeshProUGUI textcoins;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       //Debug.Log ("entered collider");
+
         if (other.transform.tag == "Coin")
         {
-            Coin ++;
+            //Adds coins and destroys coin
+            Coin++;
             textcoins.text = Coin.ToString();
-            //Debug.Log("Destroy triggered");
-            Destroy(other.gameObject);
+            Destroy(other.gameObject); 
+        }
+    }
+
+    private void OnDestroy()
+    {
+        //Saves coin to PlayerPref
+        savePrefs();
+    }
+
+    void savePrefs()
+    {
+        if (Coin > PlayerPrefs.GetInt("Highscore"))
+        {
+            //Set the PlayerPref of 'Coins' with the number of coins Collected
             PlayerPrefs.SetInt("Highscore", Coin);
-        }    
+            PlayerPrefs.Save();
+        }
+
     }
 }
+//Tutorials on PlayerPrefs: https://youtu.be/pZ3laVZQr4Y ; https://youtu.be/CWN_HQeCLWk 
