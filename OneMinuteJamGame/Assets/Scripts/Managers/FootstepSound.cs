@@ -8,22 +8,24 @@ public class FootstepSound : MonoBehaviour
     //Make footstep sounds if player is moving
 
     [SerializeField] AudioSource footsteps;
+    [SerializeField] float delay;
+
+    private bool delayFinished = true;
 
     private void Update()
     {
-        if (PlayerMovement.moveDirection.magnitude >= 0.01)
+        if (PlayerMovement.moveDirection.magnitude >= 0.01 && delayFinished)
         {
-            if (!footsteps.isPlaying)
-            {
-                footsteps.Play();
-            }
+            footsteps.pitch = Random.Range(0.5f, 1.5f);
+            footsteps.Play();
+            StartCoroutine(Delay());
         }
-        else
-        {
-            if (footsteps.isPlaying)
-            {
-                footsteps.Stop();
-            }
-        }
+    }
+
+    IEnumerator Delay()
+    {
+        delayFinished = false;
+        yield return new WaitForSecondsRealtime(delay);
+        delayFinished = true;
     }
 }
