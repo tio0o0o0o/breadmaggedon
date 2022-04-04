@@ -7,6 +7,7 @@ public class CountdownManagerScript : MonoBehaviour
 {
     [SerializeField] float TimeLeft = 60f;
     [SerializeField] TMP_Text countdownText;
+    public int Coin = 0;
 
     private void Start()
     {

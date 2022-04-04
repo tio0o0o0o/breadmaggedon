@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
@@ -19,7 +20,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene("GameplayScene");
     }
-
+    
     private void Awake()
     {
         GameStateManagerScript.OnGameover += OpenGameoverScene;
