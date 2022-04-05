@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class CoinPicker : MonoBehaviour
 {
+    public static event Action OnCollect = delegate { };
+
     public int Coin = 0;
     public TextMeshProUGUI textcoins;
 
@@ -14,6 +17,9 @@ public class CoinPicker : MonoBehaviour
         if (other.transform.tag == "Coin")
         {
             //Adds coins and destroys coin
+
+            //Calls the OnCollect event which calls the SpawnCoin function in the coin spawner
+            OnCollect?.Invoke();
             Coin++;
             textcoins.text = Coin.ToString();
             Destroy(other.gameObject); 
