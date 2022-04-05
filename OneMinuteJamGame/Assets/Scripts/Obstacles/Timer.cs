@@ -17,6 +17,10 @@ public class Timer
     {
         return current;
     }
+    public void SetCurrentTime(float time)
+    {
+        current = time;
+    }
 
     // Should be called all the time, once on every Update, in order for the timer to well, time things
     public bool CheckUntilDone(bool autoRestart = true)

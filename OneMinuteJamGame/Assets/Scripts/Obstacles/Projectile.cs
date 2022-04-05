@@ -23,9 +23,10 @@ public class Projectile : Obstacle
         transform.position += direction * speed * Time.deltaTime * acc;
     }
 
-    public void Setup(Vector3 direction, float speed, float acceleration = 0)
+    public void Setup(Vector3 direction, float speed, float damage = 1, float acceleration = 0)
     {
         this.direction = direction;
+        this.damage = damage;
         float degrees = Vector3.SignedAngle(Vector3.right, direction, Vector3.forward);
         transform.rotation = Quaternion.Euler(0, 0, degrees);
         this.speed = speed;

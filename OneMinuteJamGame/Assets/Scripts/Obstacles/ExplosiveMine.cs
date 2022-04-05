@@ -11,12 +11,14 @@ public class ExplosiveMine : Obstacle
     public GameObject particlesPrefab;
     public float particlesTime = 5;
 
+    private UICounter uiCounter = null;
     private Timer timer;
 
     private void Start()
     {
         timer = new Timer(time);
         OnCollision.AddListener(Explode);
+        uiCounter = GetComponent<UICounter>();
     }
 
     private void Update()
@@ -25,6 +27,8 @@ public class ExplosiveMine : Obstacle
         {
             Explode();
         }
+        if (uiCounter != null)
+            uiCounter.ReDrawText(Mathf.FloorToInt(timer.GetCurrentTime()+1).ToString());
     }
 
     public void Explode()
