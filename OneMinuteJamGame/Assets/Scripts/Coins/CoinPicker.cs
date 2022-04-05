@@ -6,7 +6,7 @@ using System;
 
 public class CoinPicker : MonoBehaviour
 {
-    public int Coin = 0;
+    public static int Coin = 0;
     public TextMeshProUGUI textcoins;
     public static event Action OnCollect = delegate { };
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class ExplosiveMine : Obstacle
 {
@@ -13,6 +14,8 @@ public class ExplosiveMine : Obstacle
 
     private UICounter uiCounter = null;
     private Timer timer;
+
+    public static event Action OnExplode = delegate { };
 
     private void Start()
     {
@@ -44,6 +47,7 @@ public class ExplosiveMine : Obstacle
             }
         }
         OnExplosion.Invoke();
+        OnExplode?.Invoke();
         PlayExplosionParticles();
         _SelfDestroy();
     }
