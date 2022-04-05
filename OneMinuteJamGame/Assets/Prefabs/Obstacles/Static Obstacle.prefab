@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276834a9d86544242be7be14d2ebe055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3.19
+  damage: 1
   OnCollision:
     m_PersistentCalls:
       m_Calls: []

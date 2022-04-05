@@ -438,7 +438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 889986284}
-  Coin: 0
 --- !u!1 &138600267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,7 +3306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa7cce8d2e044864a86089af5861e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coin: 0
   textcoins: {fileID: 2113009282}
 --- !u!1001 &1987257931
 PrefabInstance:
@@ -3521,7 +3519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105.7771, y: -23.349365}
+  m_AnchoredPosition: {x: 105.7771, y: -23.349396}
   m_SizeDelta: {x: 211.5542, y: 46.6988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113009282
@@ -3820,7 +3818,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2124697726}
   - component: {fileID: 2124697727}
-  - component: {fileID: 2124697728}
   m_Layer: 0
   m_Name: ParticlesManager
   m_TagString: Untagged
@@ -3856,18 +3853,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagedParticles: {fileID: 7164273062368631194, guid: bc18495d1f6f97c4bbb328af9b56ddbe, type: 3}
   playerTransform: {fileID: 1941694726}
---- !u!114 &2124697728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124697725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29946f7bd4313194e97b9f167b3a996d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2134392904
 GameObject:
   m_ObjectHideFlags: 3
