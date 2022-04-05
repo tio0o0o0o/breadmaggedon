@@ -5,7 +5,7 @@ using TMPro;
 
 public class CountdownManagerScript : MonoBehaviour
 {
-    public float TimeLeft { get; private set; } = 60f;
+    [SerializeField] float TimeLeft = 60f;
     [SerializeField] TMP_Text countdownText;
     public int Coin = 0;
 
