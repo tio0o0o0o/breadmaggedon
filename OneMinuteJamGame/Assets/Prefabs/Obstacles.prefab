@@ -91,6 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1414899007440266324}
+  - component: {fileID: 1923339985}
   m_Layer: 0
   m_Name: Obstacles
   m_TagString: Untagged
@@ -116,6 +117,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1923339985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414899007440266315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29946f7bd4313194e97b9f167b3a996d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1414899007637641021
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +664,8 @@ MonoBehaviour:
   OnExplosion:
     m_PersistentCalls:
       m_Calls: []
+  particlesPrefab: {fileID: 7164273062368631194, guid: 254c2ba8148ea92488972c5248001a2c, type: 3}
+  particlesTime: 5
 --- !u!58 &1414899008854338671
 CircleCollider2D:
   m_ObjectHideFlags: 0
