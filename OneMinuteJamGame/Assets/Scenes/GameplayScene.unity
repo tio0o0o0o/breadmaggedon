@@ -2764,10 +2764,10 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 5.0121813, y: -4.996402}
-  - {x: 5.017443, y: 4.995571}
-  - {x: -5.0131674, y: 5.0297217}
-  - {x: -5.011041, y: -4.9997253}
-  - {x: 4.99168, y: -4.9937553}
+  - {x: 5.017443, y: 4.0219154}
+  - {x: -5.0131674, y: 3.9675517}
+  - {x: -5.011041, y: -3.9375553}
+  - {x: 4.99168, y: -3.9315858}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -2806,7 +2806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105.7771, y: -23.349396}
+  m_AnchoredPosition: {x: 105.7771, y: -23.349365}
   m_SizeDelta: {x: 211.5542, y: 46.6988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113009282
