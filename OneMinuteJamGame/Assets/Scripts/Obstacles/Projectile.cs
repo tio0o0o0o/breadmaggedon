@@ -32,9 +32,4 @@ public class Projectile : Obstacle
         this.acceleration = acceleration;
         destroyTimer = new Timer(6);
     }
-
-    public void _SelfDestroy()
-    {
-        Destroy(gameObject);
-    }
 }

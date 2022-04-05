@@ -13,6 +13,11 @@ public class Timer
         Reset(time);
     }
 
+    public float GetCurrentTime()
+    {
+        return current;
+    }
+
     // Should be called all the time, once on every Update, in order for the timer to well, time things
     public bool CheckUntilDone(bool autoRestart = true)
     {

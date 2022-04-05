@@ -36,4 +36,9 @@ public class Obstacle : MonoBehaviour
         delayTimer.Reset();
         canDamage = false;
     }
+
+    public void _SelfDestroy()
+    {
+        Destroy(gameObject);
+    }
 }
