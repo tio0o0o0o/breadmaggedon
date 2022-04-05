@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class CoinPicker : MonoBehaviour
 {
     public int Coin = 0;
     public TextMeshProUGUI textcoins;
+    public static event Action OnCollect = delegate { };
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,6 +16,7 @@ public class CoinPicker : MonoBehaviour
         if (other.transform.tag == "Coin")
         {
             //Adds coins and destroys coin
+            OnCollect?.Invoke();
             Coin++;
             textcoins.text = Coin.ToString();
             Destroy(other.gameObject); 
