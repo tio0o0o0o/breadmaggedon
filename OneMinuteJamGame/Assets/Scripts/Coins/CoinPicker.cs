@@ -10,6 +10,11 @@ public class CoinPicker : MonoBehaviour
     public TextMeshProUGUI textcoins;
     public static event Action OnCollect = delegate { };
 
+    private void Start()
+    {
+        Coin = 0;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
 
