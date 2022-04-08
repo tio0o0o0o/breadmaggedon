@@ -13,6 +13,7 @@ public class HitstopScript : MonoBehaviour
 
     private void OnDestroy()
     {
+        Time.timeScale = 1f;
         healthManagerScript.OnDamaged -= CallHitStop;
     }
 
